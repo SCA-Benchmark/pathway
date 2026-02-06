@@ -12,7 +12,7 @@ RUN npm install
 COPY ./ /app/
 RUN npm run prod
 
-FROM nginx:stable-alpine
+FROM nginx:1.29.5-alpine3.23
 COPY --from=build /app/dist /usr/share/nginx/html
 # RUN rm /etc/nginx/conf.d/default.conf
 # COPY nginx.conf /etc/nginx/conf.d
